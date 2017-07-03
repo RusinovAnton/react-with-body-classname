@@ -5,15 +5,24 @@ export default (bodyClassName) => WrappedComponent => {
     static body = document.getElementsByTagName('body')[0];
 
     componentDidMount() {
-      withBodyClassNameHOC.body.classList.add(bodyClassName);
+      this.addClassName(bodyClassName);
     }
 
     componentWillUnmount() {
-      withBodyClassNameHOC.body.classList.remove(bodyClassName);
+      this.removeClassName(bodyClassName);
+    }
+
+    addClassName = (className) => {
+      withBodyClassNameHOC.body.classList.add(className)
+    }
+
+    removeClassName = (className) => {
+      withBodyClassNameHOC.body.classList.remove(className)
     }
 
     render() {
-      return <WrappedComponent {...this.props } />
+      return <WrappedComponent {...this.props } addBodyClassName={this.addClassName}
+                               removeBodyClassName={this.removeClassName}/>
     }
   }
 
