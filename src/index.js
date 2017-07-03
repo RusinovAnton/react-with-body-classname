@@ -5,11 +5,11 @@ export default (bodyClassName) => WrappedComponent => {
     static body = document.getElementsByTagName('body')[0];
 
     componentDidMount() {
-      this.addClassName(bodyClassName);
+      bodyClassName && this.addClassName(bodyClassName);
     }
 
     componentWillUnmount() {
-      this.removeClassName(bodyClassName);
+      bodyClassName && this.removeClassName(bodyClassName);
     }
 
     addClassName = (className) => {
