@@ -1,7 +1,7 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react';
 
-export default (bodyClassName) => WrappedComponent => {
-  class withBodyClassNameHOC extends PureComponent {
+export default bodyClassName => WrappedComponent => {
+  class withBodyClassNameHOC extends Component {
     static body = document.getElementsByTagName('body')[0];
 
     componentDidMount() {
@@ -12,19 +12,24 @@ export default (bodyClassName) => WrappedComponent => {
       bodyClassName && this.removeClassName(bodyClassName);
     }
 
-    addClassName = (className) => {
-      withBodyClassNameHOC.body.classList.add(className)
-    }
+    addClassName = className => {
+      withBodyClassNameHOC.body.classList.add(className);
+    };
 
-    removeClassName = (className) => {
-      withBodyClassNameHOC.body.classList.remove(className)
-    }
+    removeClassName = className => {
+      withBodyClassNameHOC.body.classList.remove(className);
+    };
 
     render() {
-      return <WrappedComponent {...this.props } addBodyClassName={this.addClassName}
-                               removeBodyClassName={this.removeClassName}/>
+      return (
+        <WrappedComponent
+          {...this.props}
+          addBodyClassName={this.addClassName}
+          removeBodyClassName={this.removeClassName}
+        />
+      );
     }
   }
 
-  return withBodyClassNameHOC
-}
+  return withBodyClassNameHOC;
+};
