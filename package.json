@@ -5,17 +5,9 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "gulp",
-    "prepublish": "yarn build"
+    "prepublish": "npm run build"
   },
-  "keywords": [
-    "react",
-    "component",
-    "react-component",
-    "body",
-    "HOC",
-    "className",
-    "cozy"
-  ],
+  "keywords": ["react", "component", "react-component", "body", "HOC", "className", "cozy"],
   "author": "Rusinov Anton",
   "license": "MIT",
   "devDependencies": {
