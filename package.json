@@ -1,13 +1,21 @@
 {
   "name": "react-with-body-classname",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "High order component that applies className to the <body/> whether given component is mounted",
   "main": "lib/index.js",
   "scripts": {
     "build": "gulp",
     "prepublish": "npm run build"
   },
-  "keywords": ["react", "component", "react-component", "body", "HOC", "className", "cozy"],
+  "keywords": [
+    "react",
+    "component",
+    "react-component",
+    "body",
+    "HOC",
+    "className",
+    "cozy"
+  ],
   "author": "Rusinov Anton",
   "license": "MIT",
   "devDependencies": {
